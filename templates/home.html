@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Asliddin Nabijonov"/>
+    <link rel="stylesheet" href="{% static 'bootstrap-5.0.2-dist/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bir.css' %}">
+    <title>Asliddin's Blog</title>
+</head>
+<body>
+<div class=" container ">
+    <div class="row navbar">
+        <div class="col-12 col-md-6 col-sm-6 navbar-icon"><a href="/">Asliddin's Blog</a></div>
+        <div class="col-12 col-md-6 col-sm-6 navbar-link">
+            <div><a href="./about.html">About</a></div>
+            <div><a href="/blog">Blog</a></div>
+            <div><a href="/talks">Talks</a></div>
+            <div><a href="https://t.me/aslidd1n_blog">Channel</a></div>
+        </div>
+    </div>
+    <div class="row header">
+        <div class="col-12 col-md-3 col-sm-12 header-img">
+            <img src="{% static 'blog.jpg' %}" alt="">
+        </div>
+        <div class=" col-12 col-md-9 col-sm-12 header-text">
+            <h1>Asliddin Nabijonov</h1>
+            <p>Software Engineer</p>
+            <a href="#"><img src="../static" alt=""></a>
+            <a href="#"><img src="{% static 'twitter.png'%}" alt=""></a>
+            <a href="https://github.com/asliddinabijonov"><img src="{% static 'github.png '%}" alt=""></a>
+            <a href=" #"><img src="{% static 'in.png'%}" alt=""></a>
+        </div>
+        <div class=" col-12 col-md-12 col-sm-12 header-btn">
+                <p>I write about non-technical stuff in the technical world</p>
+                <a class="btn-1" href="./blog.html">Blog</a>
+                <a class="btn-2" href="./about.html">About</a>
+        </div>
+        <div class="row footer">
+            <div class="col-12">
+                <p>© 2021 codial.com</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
