@@ -8,6 +8,10 @@ class HomeView(View):
     def get(self, request):
         return render(request, 'home.html')
 
+class AboutView(View):
+    def get(self, request):
+        return render(request, 'about.html')
+
 
 class BlogView(View):
     def get(self, request):
@@ -30,6 +34,7 @@ class BlogView(View):
             12: 'December'
         }
         for ym in years_months:
+            blog = Blog.objects.all()
             month_blogs = all_blogs.filter(date__year=ym['year'], date__month=ym['month'])
             if month_blogs.exists():
                 if ym['year'] not in blogs_by_year_month:
@@ -40,7 +45,8 @@ class BlogView(View):
                 }
         context = {
             'blogs_by_year_month': blogs_by_year_month,
-            'months': months
+            'months': months,
+            'blog':blog
         }
         return render(request, 'blog.html', context)
 
@@ -51,3 +57,26 @@ class TalkView(View):
             'talks': talks
         }
         return render(request, 'talks.html', context)
+
+class MaqolaView(View):
+    def get(self, request, pk):
+        maqola = Blog.objects.get(id=pk)
+        months = {
+            1: 'Yanvar',
+            2: 'Fevral',
+            3: 'Mart',
+            4: 'April',
+            5: 'May',
+            6: 'June',
+            7: 'July',
+            8: 'August',
+            9: 'September',
+            10: 'October',
+            11: 'November',
+            12: 'December'
+        }
+        context = {
+            'maqola': maqola,
+            'month': months[maqola.date.month],
+        }
+        return render(request, 'maqola.html', context)
